@@ -2,4 +2,6 @@
 
 Contributors:
 
-Phillip Bang
+Chinzo
+Phillip
+Adam
