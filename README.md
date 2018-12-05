@@ -1,4 +1,4 @@
-# savor-the-flavor
+# Savor-the-Flavor
 
 Contributors:
 
