@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all food
   app.get("/food/examples", function(req, res) {
     db.food.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
@@ -9,7 +9,7 @@ module.exports = function(app) {
     
   });
 
-  // Create a new example
+  // Create a new food
   app.post("/food/examples", function(req, res) {
     // we create the database
     db.food.create(req.body).then(function(dbExample) {
@@ -19,7 +19,7 @@ module.exports = function(app) {
     .catch( err => res.json(err))
   });
 
-  // Delete an example by id
+  // Delete an food by id
   app.delete("/food/examples/:id", function(req, res) {
     db.food.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);

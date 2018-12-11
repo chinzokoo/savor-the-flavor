@@ -1,6 +1,7 @@
 require('dotenv').config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var morgan = require("morgan");
 
 var db = require("./models");
 
@@ -11,6 +12,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(morgan('dev'));
 
 // Handlebars
 app.engine(
@@ -24,8 +26,8 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/userRoutes")(app);
 require("./routes/foodRoutes")(app);
-require("./routes/htmlRoutes")(app);
 require("./routes/recipeRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: true };
 

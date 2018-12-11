@@ -1,26 +1,30 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/user/examples", function(req, res) {
-    db.user.findAll({}).then(function(dbExamples) {
+  // Get all user
+  app.post("/user/login", function(req, res) {
+    db.user.findOne({where: {
+      email: req.body.email,
+      password: req.body.password
+    }})
+    .then(function(dbExamples) {
       res.json(dbExamples);
     })
     
   });
 
-  // Create a new example
-  app.post("/user/examples", function(req, res) {
+  // Create a new user
+  app.post("/user/register", function(req, res) {
     // we create the database
     db.user.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+      res.json('user created');
     })
     // respond the error
     .catch( err => res.json(err))
   });
 
-  // Delete an example by id
-  app.delete("/user/examples/:id", function(req, res) {
+  // Delete an user by id
+  app.delete("/user/delete/:id", function(req, res) {
     db.user.destroy({
       where: {
          id: req.params.id 
@@ -28,11 +32,5 @@ module.exports = function(app) {
     }).then(function(dbExample) {
       res.json(dbExample);
     });
-
-    // db.food.destroy({ where: { userId: req.params.id } }).then(function() {
-    //   db.user.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-    //     res.json(dbExample);
-    //   });   
-    // });
   });
 };
