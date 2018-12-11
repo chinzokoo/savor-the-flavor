@@ -13,15 +13,6 @@ module.exports = function(app) {
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.user.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-
   // Load login page
   app.get("/login", function(req, res) {
       res.render("login", {
@@ -32,6 +23,20 @@ module.exports = function(app) {
   // Load register page
   app.get("/register", function(req, res) {
       res.render("register", {
+        msg: "Welcome!",
+      });
+  });
+
+  // Load find food page
+  app.get("/search", function(req, res) {
+      res.render("foodSearch", {
+        msg: "Welcome!",
+      });
+  });
+
+  // Load add food page
+  app.get("/addfood", function(req, res) {
+      res.render("addfood", {
         msg: "Welcome!",
       });
   });
