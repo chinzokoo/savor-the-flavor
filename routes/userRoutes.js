@@ -10,7 +10,9 @@ module.exports = function(app) {
     .then(function(dbExamples) {
       res.json(dbExamples);
     })
-    
+    .catch(function (err) {
+      res.json(err);
+    })
   });
 
   // Create a new user
@@ -21,16 +23,5 @@ module.exports = function(app) {
     })
     // respond the error
     .catch( err => res.json(err))
-  });
-
-  // Delete an user by id
-  app.delete("/user/delete/:id", function(req, res) {
-    db.user.destroy({
-      where: {
-         id: req.params.id 
-      }, 
-    }).then(function(dbExample) {
-      res.json(dbExample);
-    });
   });
 };

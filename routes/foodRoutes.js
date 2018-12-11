@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all food
-  app.get("/food/examples", function(req, res) {
+  app.get("/food", function(req, res) {
     db.food.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     })
@@ -10,8 +10,9 @@ module.exports = function(app) {
   });
 
   // Create a new food
-  app.post("/food/examples", function(req, res) {
+  app.post("/food/create", function(req, res) {
     // we create the database
+    // console.log(req.body)
     db.food.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     })

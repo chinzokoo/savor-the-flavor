@@ -92,7 +92,7 @@
 
 .login-dark {
   height:802px;
-  background: url(../../assets/img/prep.jpg) no-repeat left;
+  background: url(../../public/images/food.jpg) no-repeat left;
   background-size:cover;
   border:none;
   background-attachment: fixed;
@@ -585,7 +585,7 @@
 .register-photo {
   background:#fff;
   padding:60px 0;
-  background:url(../../assets/img/prep.jpg) no-repeat center;
+  background:url(/images/food.jpg.) no-repeat center;
   background-size:cover;
   position: relative;
   border:none;
@@ -705,7 +705,7 @@
 /* Header */
 
 .hero {
-    background:url(../../assets/img/prep.jpg) no-repeat center;
+    background:url(../../public/images/food.jpg) no-repeat center;
     background-size:cover;
     position: relative;
     border:none;
@@ -1058,7 +1058,7 @@ hr { margin:1px}
 }
 
 #howItWorks {
-  background-image: url("/assets/img/indgedients.jpg");
+  background-image: url("/public/images/food1.jpg");
   background-size: cover;
   height:400px;
 }
@@ -1104,7 +1104,7 @@ hr { margin:1px}
 }
 
 #dashboardContainer{
-  background-image: url("/assets/img/prep.jpg");
+  background-image: url("/public/images/food.jpg");
   position: relative;
   background-size: cover;
   background-position: center center;
@@ -1141,7 +1141,7 @@ hr { margin:1px}
 }
 
 #recipeContainer {
-  background-image: url("/assets/img/prep.jpg");
+  background-image: url("/public/images/food.jpg");
   position: relative;
   background-size: cover;
   /*z-index: -10;*/
