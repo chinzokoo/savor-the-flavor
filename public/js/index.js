@@ -9,8 +9,13 @@ $('#register').on("click", function(e) {
   $.ajax("/user/register",{
     type: "POST",
     data: user
-  }).then(function(res) {
-    console.log(res)
+  }).then(function(user) {
+    if(user === "user created"){
+      window.location.replace("http://localhost:3000/login");
+    } else {
+      console.log(user);
+      alert(user.errors[0].message);
+    }
   })
 })
 
@@ -25,7 +30,12 @@ $('#login').on("click", function(e) {
   $.ajax("/user/login",{
     type: "POST",
     data: user
-  }).then(function(res) {
+  }).then(function(user) {
+    if(!user) {
+      alert ("Invalid User");
+    } else {
+      window.location.replace("http://localhost:3000/search");
+    }
     console.log(res)
   })
 })
@@ -42,7 +52,8 @@ $('#searchFood').on("click", function(e) {
     data: food
   })
   .then(function( res) {
-    console.log(res)
+    console.log(res.hits[0].recipe.image);
+    console.log(res.hits[0].recipe.ingredientLines);
   })
 })
 
@@ -65,7 +76,7 @@ $('#AddFood').on("click", function(e) {
       recipe: res,
       userId: 1
     }
-    console.log(newFood)
+    
     // we now receive response from adamam then we use it to be a recipe
     $.ajax("/food/create",{
       type: "POST",
@@ -74,6 +85,5 @@ $('#AddFood').on("click", function(e) {
     .then(function( res) {
       console.log(res)
     })   
-
   })
 })

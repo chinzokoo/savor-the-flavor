@@ -18,7 +18,8 @@ module.exports = function(app) {
   // Create a new user
   app.post("/user/register", function(req, res) {
     // we create the database
-    db.user.create(req.body).then(function(dbExample) {
+    db.user.create(req.body)
+    .then(function(dbExample) {
       res.json('user created');
     })
     // respond the error

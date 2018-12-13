@@ -92,7 +92,7 @@
 
 .login-dark {
   height:802px;
-  background: url(../../public/images/food.jpg) no-repeat left;
+  background: url(../images/food.jpg) no-repeat left;
   background-size:cover;
   border:none;
   background-attachment: fixed;
@@ -101,8 +101,8 @@
 .login-dark form {
   max-width:320px;
   width:90%;
-  background-color:#fff;
-  padding:40px;
+  background-color:greenyellow;
+  padding:30px;
   border-radius:4px;
   -webkit-transform:translate(-50%, -50%);
           transform:translate(-50%, -50%);
@@ -585,7 +585,7 @@
 .register-photo {
   background:#fff;
   padding:60px 0;
-  background:url(/images/food.jpg.) no-repeat center;
+  /* background:url() no-repeat center; */
   background-size:cover;
   position: relative;
   border:none;
@@ -597,12 +597,12 @@
   height:auto;
 }
 
-.register-photo .image-holder {
+ /* .register-photo .image-holder {
   display:table-cell;
   width:auto;
-  /*background:url(../../assets/img/meeting.jpg);*/
-  /*background-size:cover;*/
-}
+  background:url(../../assets/img/meeting.jpg);
+  background-size:cover;
+}  */
 
 .register-photo .form-container {
   display:table;
@@ -723,8 +723,6 @@
     height: auto;
     width: 600px;
     border-radius: 5px;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration:2s;
     margin-top: 200px;
   }
 
@@ -754,7 +752,7 @@
 }
 
 .hero .get-it h1{
-  color: #000;
+  color: greenyellow;
   margin-bottom:10px;
   font-weight: 600;
   text-align: center;
@@ -1057,11 +1055,8 @@ hr { margin:1px}
   font-size: 42px;
 }
 
-#howItWorks {
-  background-image: url("/public/images/food1.jpg");
-  background-size: cover;
-  height:400px;
-}
+
+
 
 /* Form */
 
