@@ -51,9 +51,18 @@ $('#searchFood').on("click", function(e) {
     type: "POST",
     data: food
   })
-  .then(function( res) {
-    console.log(res.hits[0].recipe.image);
+  .then(function(res) {
+    // console.log(res.hits[0].recipe.image);
     console.log(res.hits[0].recipe.ingredientLines);
+
+    var recipeImage = res.hits[0].recipe.image;
+    var recipeData = res.hits[0].recipe.ingredientLines;
+
+    // for (var i=0; i<recipeData.length; i++){
+    //   var recipeList = recipeData[i];
+    //   console.log(recipeList);
+    // };
+    
   })
 })
 
