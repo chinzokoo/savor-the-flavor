@@ -28,5 +28,18 @@
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
     "prettier": "^1.13.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinzokoo/savor-the-flavor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/chinzokoo/savor-the-flavor/issues"
+  },
+  "homepage": "https://github.com/chinzokoo/savor-the-flavor#readme"
 }
