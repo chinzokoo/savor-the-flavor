@@ -7,14 +7,20 @@
 
             <i class="icon ion-md-search"></i>
             <div class="form-group">
-                <input class="form-control"  name="food" placeholder="What would you like to search?" id="foodSearch">
+                <input class="form-control" name="food" placeholder="What would you like to search?" id="foodSearch">
             </div>
 
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit" id="searchFood">Search</button>
             </div>
+        
+            <ol>
+                {{#each recipeData}}
+                <li>{{recipeData}}</li>
+                {{/each}}
+            </ol>
+
         </form>
 
     </div>
 </div>
-
